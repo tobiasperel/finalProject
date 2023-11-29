@@ -15,15 +15,15 @@ describe("MyToken", function () {
     // Contracts are deployed using the first signer/account by default
     const [owner, otherAccount] = await ethers.getSigners();
 
-    const MyToken = await ethers.getContractFactory("ReferenceConsumer");
-    const myToken = await MyToken.deploy("0x614715d2Af89E6EC99A233818275142cE88d1Cfd");
+    const MyToken = await ethers.getContractFactory("RealTimePrice");
+    const myToken = await MyToken.deploy();
     return {myToken, owner, otherAccount };
   }
 
   describe("Deployment", function () {
-    it("FIJARSE EL PRECIO VOTEN A MILIEIIII", async function () {
+    it("FIJARSE EL PRECIO", async function () {
       const { myToken,owner } = await loadFixture(deployToken);
-      console.log(await myToken.connect(owner).getLatestAnswer()); 
+      console.log(await myToken.connect(owner).getPrice()); 
     });
     
     
