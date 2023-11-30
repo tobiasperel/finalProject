@@ -108,10 +108,10 @@ IUniswapV2Router02 public uniswapRouter;
         totalMembers -= membersToErrase;
     }
 
-    function close() external onlyOwner {
-        payable(msg.sender).transfer(address(this).balance);
-        //selfdestruct(payable(owner()));
-    }
+    // function close() external onlyOwner {
+    //     payable(msg.sender).transfer(address(this).balance);
+    //     //selfdestruct(payable(owner()));
+    // }
 
 
     
